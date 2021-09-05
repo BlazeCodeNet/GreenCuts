@@ -1,4 +1,4 @@
-package net.blazecode.example;
+package net.blazecode.greencuts;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigData;
@@ -10,10 +10,10 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
 @Environment( EnvType.SERVER )
-public class ExampleMod implements DedicatedServerModInitializer
+public class GreenMod implements DedicatedServerModInitializer
 {
 
-	public static final String MODID = "example";
+	public static final String MODID = "greencuts";
 
 	@Override
 	public void onInitializeServer( )
@@ -35,7 +35,35 @@ public class ExampleMod implements DedicatedServerModInitializer
 	@Config(name = MODID)
 	public static class ModConfig implements ConfigData
 	{
-		@Comment("Toggles the entire mod on or off")
+		@Comment("Toggles this entire mod on or off")
 		boolean enabled = true;
+
+		@Comment("Auto-Plant timer in ticks; 20 ticks = 1 second.\n MUST be less than 5800 ticks!\n200 ticks(10 seconds) is recommended.")
+		int autoPlantTicks = 200;
+
+		@Comment("The chance between 0-100 of a sapling to be auto-planted")
+		int autoPlantChance = 100;
+
+		public boolean getEnabled()
+		{
+			return enabled;
+		}
+
+		public int getPlantTicks()
+		{
+			if(autoPlantTicks > 5800)
+			{
+				return 5800;
+			}
+			return autoPlantTicks;
+		}
+		public int getPlantChance()
+		{
+			if(autoPlantChance < 0 || autoPlantChance > 100)
+			{
+				return 100;
+			}
+			return autoPlantChance;
+		}
 	}
 }

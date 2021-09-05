@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "example",
+  "id": "greencuts",
   "version": "${version}",
 
-  "name": "Example",
+  "name": "GreenCuts",
   "description": "A server-side mod template",
   "authors": [
     "BlazeCode",
@@ -11,20 +11,20 @@
   ],
   "contact": {
     "homepage": "https://github.com/BlazeCodeNet",
-    "sources": "https://github.com/BlazeCodeNet/fabric-template"
+    "sources": "https://github.com/BlazeCodeNet/GreenCuts"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/greencuts/icon.png",
 
   "environment": "server",
   "entrypoints": {
     "server": [
-      "net.blazecode.example.ExampleMod"
+      "net.blazecode.greencuts.GreenMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "greencuts.mixins.json"
   ],
 
   "depends": {
