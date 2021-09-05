@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "example",
+  "version": "${version}",
+
+  "name": "Example",
+  "description": "A server-side mod template",
+  "authors": [
+    "BlazeCode",
+    "Cosmix"
+  ],
+  "contact": {
+    "homepage": "https://github.com/BlazeCodeNet",
+    "sources": "https://github.com/BlazeCodeNet/fabric-template"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      "net.blazecode.example.ExampleMod"
+    ]
+  },
+  "mixins": [
+    "modid.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
