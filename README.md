@@ -1,8 +1,8 @@
-# Fabric Example Mod
+# Green Cuts Mod
 
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+## Info
+Green Cuts is a FabricMC mod that is only needed server-side, but doesnt hurt to have it on the client.
+Its main purpose is to automatically plant saplings that are dropped on the ground, and its very configurable!
 
 ## License
 
