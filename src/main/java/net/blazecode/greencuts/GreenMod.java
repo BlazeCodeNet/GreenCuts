@@ -8,18 +8,12 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 import net.fabricmc.api.DedicatedServerModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.api.ModInitializer;
 
-@Environment( EnvType.SERVER )
-public class GreenMod implements DedicatedServerModInitializer
+public class GreenMod implements ModInitializer
 {
 
 	public static final String MODID = "greencuts";
-
-	@Override
-	public void onInitializeServer( )
-	{
-		AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
-	}
 
 	public static ModConfig getConfig()
 	{
@@ -32,6 +26,12 @@ public class GreenMod implements DedicatedServerModInitializer
 
 	private static ModConfig config;
 
+	@Override
+	public void onInitialize( )
+	{
+		AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
+	}
+
 	@Config(name = MODID)
 	public static class ModConfig implements ConfigData
 	{
@@ -42,7 +42,7 @@ public class GreenMod implements DedicatedServerModInitializer
 		int autoPlantTicks = 200;
 
 		@Comment("The chance between 0-100 of a sapling to be auto-planted")
-		int autoPlantChance = 100;
+		int autoPlantChance = 66;
 
 		public boolean getEnabled()
 		{

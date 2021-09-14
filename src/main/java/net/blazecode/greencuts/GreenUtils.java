@@ -20,7 +20,7 @@ public class GreenUtils
         BlockState state = block.getDefaultState();
 
         int randInt = 0;
-        int checkerInt = (100 - GreenMod.getConfig().autoPlantChance);
+        int checkerInt = (100 - GreenMod.getConfig().getPlantChance());
         if(checkerInt > 0)
         {
             randInt = world.random.nextInt(checkerInt);
