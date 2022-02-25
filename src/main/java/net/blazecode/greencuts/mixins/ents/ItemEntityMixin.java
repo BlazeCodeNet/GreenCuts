@@ -28,14 +28,14 @@ public abstract class ItemEntityMixin extends Entity implements AutoPlantable
 
     @Shadow private int itemAge;
 
-    @Inject( method = "tick", at = @At("HEAD"), cancellable = true)
+    @Inject( method = "tick", at = @At("HEAD"))
     void onTick(CallbackInfo ci)
     {
         if(!this.world.isClient && GreenMod.getConfig().getEnabled() && !triedPlanting())
         {
-            if(GreenUtils.isSaplingStack(this.getStack()))
+            if( GreenUtils.isSaplingStack(this.getStack()) )
             {
-                if(this.itemAge >= GreenMod.getConfig().getPlantTicks())
+                if(this.itemAge >= GreenMod.getConfig().getAutoPlantTicks())
                 {
                     ServerWorld srvWorld = (ServerWorld) world;
                     BlockState state = Block.getBlockFromItem(this.getStack().getItem()).getDefaultState();
