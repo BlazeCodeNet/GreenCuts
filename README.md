@@ -1,4 +1,5 @@
-# Green Cuts Mod
+# NOTICE
+The entire project's repo has been moved [here](https://github.com/VenomCodeDev/GreenCuts)
 
 ## Info
 Green Cuts is a FabricMC mod that is only needed server-side, but doesnt hurt to have it on the client.
